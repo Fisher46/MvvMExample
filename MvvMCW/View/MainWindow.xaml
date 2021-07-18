@@ -1,0 +1,47 @@
+﻿<Window x:Class="MvvMCW.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MvvMCW.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Column="0" />
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Margin="5">
+                <Label>Movie Name:</Label>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="5">
+                <Label>Movie Year:</Label>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Margin="5">
+                <Label>Movie Genre:</Label>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Margin="5">
+                <Label>IMDB:</Label>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="4">
+                <Button Width="50" Height="20">Add</Button>
+                <Button Margin="5,0,0,0" Width="50" Height="20">Delete</Button>
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</Window>

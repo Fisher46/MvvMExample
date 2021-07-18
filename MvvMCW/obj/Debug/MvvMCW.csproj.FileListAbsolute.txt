@@ -1,0 +1,15 @@
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\bin\Debug\MvvMCW.exe.config
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\bin\Debug\MvvMCW.exe
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\bin\Debug\MvvMCW.pdb
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\MvvMCW.csprojAssemblyReference.cache
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\View\MainWindow.g.cs
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\App.g.cs
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\MvvMCW_MarkupCompile.cache
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\MvvMCW_MarkupCompile.lref
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\View\MainWindow.baml
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\MvvMCW.g.resources
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\MvvMCW.Properties.Resources.resources
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\MvvMCW.csproj.GenerateResource.cache
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\MvvMCW.csproj.CoreCompileInputs.cache
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\MvvMCW.exe
+C:\Users\ching\RiderProjects\MvvMCW\MvvMCW\obj\Debug\MvvMCW.pdb
