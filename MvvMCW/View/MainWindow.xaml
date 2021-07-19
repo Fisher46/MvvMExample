@@ -12,8 +12,19 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <ListBox Grid.Column="0" />
-        <Grid Grid.Column="1">
+        <ListBox SelectedIndex="{Binding SelectedMovieIndex}" SelectedItem="{Binding SelectedMovie}" ItemsSource="{Binding Movies}" Grid.Column="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Name}" />
+                        <Label Content="{Binding Genre}" />
+                        <Label Content="{Binding Year}" />
+                        <Label Content="{Binding Imdb}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Column="1" DataContext="{Binding SelectedMovie}">
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
@@ -23,25 +34,25 @@
             </Grid.RowDefinitions>
             <StackPanel Margin="5">
                 <Label>Movie Name:</Label>
-                <TextBox/>
+                <TextBox Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="5">
                 <Label>Movie Year:</Label>
-                <TextBox/>
+                <TextBox Text="{Binding Year,UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
             <StackPanel Grid.Row="2" Margin="5">
                 <Label>Movie Genre:</Label>
-                <TextBox/>
+                <TextBox Text="{Binding Genre,UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
             <StackPanel Grid.Row="3" Margin="5">
                 <Label>IMDB:</Label>
-                <TextBox/>
+                <TextBox Text="{Binding Imdb,UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="4">
-                <Button Width="50" Height="20">Add</Button>
-                <Button Margin="5,0,0,0" Width="50" Height="20">Delete</Button>
+                <Button Command="{Binding ElementName = AddCommand}" Width="50" Height="20">Add</Button>
+                <Button Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedMovie}" Margin="5,0,0,0" Width="50" Height="20">Delete</Button>
             </StackPanel>
         </Grid>
-        
+
     </Grid>
 </Window>

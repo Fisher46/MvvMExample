@@ -1,4 +1,7 @@
-﻿namespace MvvMCW.View
+﻿using MvvMCW.Service;
+using MvvMCW.ViewModel;
+
+namespace MvvMCW.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -8,6 +11,7 @@
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MovieViewModel(new JsonFileService());
         }
     }
 }

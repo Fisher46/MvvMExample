@@ -56,9 +56,11 @@
             <SubType>Code</SubType>
         </Compile>
         <Compile Include="Model\Movie.cs" />
+        <Compile Include="Properties\Annotations.cs" />
         <Compile Include="Service\Command\RelayCommand.cs" />
         <Compile Include="Service\IFileService.cs" />
         <Compile Include="Service\JsonFileService.cs" />
+        <Compile Include="ViewModel\MovieViewModel.cs" />
         <Compile Include="View\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
