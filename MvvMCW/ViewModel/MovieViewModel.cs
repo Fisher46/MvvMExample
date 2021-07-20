@@ -26,7 +26,7 @@ namespace MvvMCW.ViewModel
         public Movie SelectedMovie
         {
             get => selectedMovie;
-            set
+            set 
             {
                 selectedMovie = value;
                 OnPropertyChanged(nameof(SelectedMovie));
@@ -109,9 +109,9 @@ namespace MvvMCW.ViewModel
 
             Movies = new ObservableCollection<Movie>
             {
-                new Movie {Name = "Harry Potter", Genre = "Fantasy", Imdb = 9.0f, Year = new DateTime(2018, 10, 10)},
-                new Movie {Name = "Kill bill", Genre = "Action", Imdb = 9.0f, Year = new DateTime(2018, 10, 10)},
-                new Movie {Name = "Focus", Genre = "Action", Imdb = 9.0f, Year = new DateTime(2018, 10, 10)},
+                new Movie {Name = "Harry Potter", Genre = "Fantasy", Imdb = 9.0, Year = new DateTime(2018, 10, 10)},
+                new Movie {Name = "Kill bill", Genre = "Action", Imdb = 9.0, Year = new DateTime(2018, 10, 10)},
+                new Movie {Name = "Focus", Genre = "Action", Imdb = 9.5, Year = new DateTime(2018, 10, 10)},
             };
         }
 

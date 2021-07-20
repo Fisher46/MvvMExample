@@ -3,16 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:MvvMCW.MyControls"
         xmlns:local="clr-namespace:MvvMCW.View"
+        xmlns:viewModel="clr-namespace:MvvMCW.ViewModel"
+
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding SaveCommand}" Key="S" Modifiers="Control"/> 
+        <KeyBinding Command="{Binding OpenCommand}" Key="L" Modifiers="Control"/> 
+    </Window.InputBindings>
+    <Grid Name="mainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <ListBox SelectedIndex="{Binding SelectedMovieIndex}" SelectedItem="{Binding SelectedMovie}" ItemsSource="{Binding Movies}" Grid.Column="0">
+        <ListBox SelectedIndex="{Binding SelectedMovieIndex}" SelectedItem="{Binding SelectedMovie}"
+                 ItemsSource="{Binding Movies}" Grid.Column="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -20,39 +28,49 @@
                         <Label Content="{Binding Genre}" />
                         <Label Content="{Binding Year}" />
                         <Label Content="{Binding Imdb}" />
+                        <controls:Rate/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Grid Grid.Column="1" DataContext="{Binding SelectedMovie}">
+        <Grid Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <StackPanel Margin="5">
-                <Label>Movie Name:</Label>
-                <TextBox Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}" />
-            </StackPanel>
-            <StackPanel Grid.Row="1" Margin="5">
-                <Label>Movie Year:</Label>
-                <TextBox Text="{Binding Year,UpdateSourceTrigger=PropertyChanged}" />
-            </StackPanel>
-            <StackPanel Grid.Row="2" Margin="5">
-                <Label>Movie Genre:</Label>
-                <TextBox Text="{Binding Genre,UpdateSourceTrigger=PropertyChanged}" />
-            </StackPanel>
-            <StackPanel Grid.Row="3" Margin="5">
-                <Label>IMDB:</Label>
-                <TextBox Text="{Binding Imdb,UpdateSourceTrigger=PropertyChanged}" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="4">
-                <Button Command="{Binding ElementName = AddCommand}" Width="50" Height="20">Add</Button>
-                <Button Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedMovie}" Margin="5,0,0,0" Width="50" Height="20">Delete</Button>
+            <Grid DataContext="{Binding SelectedMovie}">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackPanel Margin="5">
+                    <Label>Movie Name:</Label>
+                    <TextBox Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="5">
+                    <Label>Movie Year:</Label>
+                    <TextBox Text="{Binding Year,UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+                <StackPanel Grid.Row="2" Margin="5">
+                    <Label>Movie Genre:</Label>
+                    <TextBox Text="{Binding Genre,UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="5">
+                    <Label>IMDB:</Label>
+                    <TextBox Text="{Binding Imdb,UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+          
+            </Grid>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Button Command="{Binding AddCommand}" Width="50" Height="20">Add</Button>
+                <Button Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedMovie}"
+                        Margin="5,0,0,0" Width="50" Height="20">
+                    Delete
+                </Button>
             </StackPanel>
         </Grid>
-
     </Grid>
 </Window>

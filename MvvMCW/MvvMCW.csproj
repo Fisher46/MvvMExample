@@ -56,6 +56,9 @@
             <SubType>Code</SubType>
         </Compile>
         <Compile Include="Model\Movie.cs" />
+        <Compile Include="MyControls\Rate.xaml.cs">
+          <DependentUpon>Rate.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Properties\Annotations.cs" />
         <Compile Include="Service\Command\RelayCommand.cs" />
         <Compile Include="Service\IFileService.cs" />
@@ -84,6 +87,7 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <Page Include="MyControls\Rate.xaml" />
       <Page Include="View\MainWindow.xaml">
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>
